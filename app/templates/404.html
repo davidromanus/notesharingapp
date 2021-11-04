@@ -1,0 +1,9 @@
+{%extends 'base.html'%}
+{%block body%}
+<div style="background-image: url({{url_for('static',filename='error.jpeg')}});background-size: cover;max-width:500px;height:500px;text-align: center;position:relative;left:30%;">
+	<h1 style="font-size: 48px;margin: 30px;">404 Error</h1>
+	<h1>File Not Found</h1>
+	<a href="{{url_for('index')}}" class="btn btn-secondary btn-lg">Go Home</a>
+</div>
+
+{%endblock body%}

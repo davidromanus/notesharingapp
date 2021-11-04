@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+{%block body%}
+<div class="container">
+<h2>{{current_user.username}},</h2>
+<a href="{{url_for('index')}}">&#10094;</a>
+<form action="" method="post" enctype="multipart/form-data">
+	{{form.hidden_tag()}}
+	<p>
+		{{form.title(class="form-control",placeholder="Enter Title")}}<br>
+		{%for error in form.title.errors%}
+		<span style="color: red;">{{error}}</span>
+		{%endfor%}
+	</p>
+	<p>
+		{{form.post(class="form-control",placeholder="Enter Note")}}<br>
+		{%for error in form.post.errors%}
+		<span style="color: red;">{{error}}</span>
+		{%endfor%}
+	</p>
+	<p>
+		{{form.submit(class="btn btn-primary btn-xs")}}
+	</p>
+	
+	
+</form>
+</div>
+{%endblock body%}

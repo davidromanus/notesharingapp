@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{%block body%}
+<div class="container">
+	<div>
+		<p>written by <small><a href="{{url_for('account',username=note.author.username)}}">@{{note.author.username}}</a>
+			{{note.pub_date}}
+		 </small>
+		</p>
+		<h1 style="color:purple">{{note.title}}</h1>
+		<hr>
+		<p class="lead">{{note.content}}</p>
+	</div>
+</div>
+<canvas>
+	
+</canvas>
+{%endblock body%}

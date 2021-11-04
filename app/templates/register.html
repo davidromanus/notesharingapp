@@ -1,0 +1,65 @@
+{%extends 'base.html'%}
+{%block body%}
+<div class="container" style="text-align:center;">
+	<h2 class="logo nav-link p-3">
+		Note Share App
+	</h2>
+	<p class="lead">Join the fun and share your Notes today</p>
+</div>
+<div class="container">
+	<h2 class="text-dark" style="text-align:center;">Sign Up here</h2>
+<div class="form-group">
+	<form action="" method="POST" novalidate role="form" enctype=multipart/form-data>
+		{{form.hidden_tag()}}
+		<div >
+			{{form.username(class="form-control",placeholder="username")}}
+			{%for error in form.username.errors%}
+		<p style="color:red;">{{error}}</p>
+		{%endfor%}
+		</div>
+		<br>
+
+
+		<div >
+			{{form.address(class="form-control",placeholder="address")}}
+			{%for error in form.address.errors%}
+		<p style="color:red;">{{error}}</p>
+		{%endfor%}
+		</div>
+		<br>
+
+		<div >
+			{{form.field(class="form-control",placeholder="Enter your field")}}
+			{%for error in form.field.errors%}
+		<p style="color:red;">{{error}}</p>
+		{%endfor%}
+		</div>
+		<br>
+
+		<div >
+			{{form.phone(class="form-control",placeholder="e.g +234")}}
+			{%for error in form.phone.errors%}
+		<p style="color:red;">{{error}}</p>
+		{%endfor%}
+		</div>
+		<br>
+
+
+		<div >
+			{{form.password(class="form-control",placeholder="password")}}
+			{%for error in form.password.errors%}
+		<p style="color:red;">{{error}}</p>
+		{%endfor%}
+		</div>
+		<br>
+
+		<div  >
+			{{form.submit(class="btn btn-outline-primary btn-md")}}
+		</div>
+
+	</form>
+	<br>
+	<p>Already have an account? <span><a href="{{url_for('login')}}">Login</a></span></p>
+</div>
+</div>
+{%endblock body%}
